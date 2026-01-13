@@ -1,0 +1,29 @@
+
+{
+
+  "manifest_version": 3,
+  "name": "Email Sorter",
+  "version": "1.0",
+  "description": "Sort your emails based on various criteria.",
+  "permissions": ["tabs", "activeTab", "storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png"
+    }
+  },
+  "icons": {
+    "16": "icon16.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["contentScript.js"]
+      
+    }
+  ]
+  
+}
